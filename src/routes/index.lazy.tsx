@@ -1,9 +1,10 @@
+import { Title } from '@mantine/core'
 import { createLazyFileRoute } from '@tanstack/react-router'
 
 const HomePage = () => {
 	return (
 		<div className="p-2">
-			<h3>Welcome Home!</h3>
+			<Title>Welcome Home!</Title>
 		</div>
 	)
 }

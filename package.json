@@ -12,6 +12,8 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@mantine/core": "^7.11.1",
+    "@mantine/hooks": "^7.11.1",
     "@tanstack/react-query": "^5.50.1",
     "@tanstack/react-router": "^1.43.12",
     "ky": "^1.4.0",
@@ -30,6 +32,8 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
     "postcss": "^8.4.39",
+    "postcss-preset-mantine": "^1.15.0",
+    "postcss-simple-vars": "^7.0.1",
     "prettier": "^3.3.2",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.5.3",
