@@ -13,15 +13,18 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.50.1",
+    "@tanstack/react-router": "^1.43.12",
     "ky": "^1.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@epic-web/config": "^1.11.2",
+    "@tanstack/router-devtools": "^1.43.12",
+    "@tanstack/router-plugin": "^1.43.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react-swc": "^3.7.0",
+    "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
     "husky": "^9.0.11",
