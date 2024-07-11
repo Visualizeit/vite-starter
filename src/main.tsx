@@ -1,15 +1,19 @@
 import { RouterProvider } from '@tanstack/react-router'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import router from './configs/router'
 import Providers from './Providers'
-import router from './router'
 
 import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-	<React.StrictMode>
-		<Providers>
-			<RouterProvider router={router} />
-		</Providers>
-	</React.StrictMode>,
-)
+const container = document.getElementById('root')
+
+if (container) {
+	ReactDOM.createRoot(container).render(
+		<React.StrictMode>
+			<Providers>
+				<RouterProvider router={router} />
+			</Providers>
+		</React.StrictMode>,
+	)
+}

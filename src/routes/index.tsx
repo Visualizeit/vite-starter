@@ -1,5 +1,5 @@
 import { Title } from '@mantine/core'
-import { createLazyFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 
 const HomePage = () => {
 	return (
@@ -9,6 +9,6 @@ const HomePage = () => {
 	)
 }
 
-export const Route = createLazyFileRoute('/')({
+export const Route = createFileRoute('/')({
 	component: HomePage,
 })

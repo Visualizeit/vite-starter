@@ -5,5 +5,9 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [tsconfigPaths(), react(), TanStackRouterVite()],
+	plugins: [
+		tsconfigPaths(),
+		react(),
+		TanStackRouterVite({ experimental: { enableCodeSplitting: true } }),
+	],
 })
