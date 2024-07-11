@@ -10,4 +10,7 @@ export default defineConfig({
 		react(),
 		TanStackRouterVite({ experimental: { enableCodeSplitting: true } }),
 	],
+	server: {
+		open: true,
+	},
 })
