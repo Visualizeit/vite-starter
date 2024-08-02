@@ -6,11 +6,13 @@ interface RouterContext {
 	queryClient: QueryClient
 }
 
+const AppRoot = () => (
+	<>
+		<Outlet />
+		<TanStackRouterDevtools />
+	</>
+)
+
 export const Route = createRootRouteWithContext<RouterContext>()({
-	component: () => (
-		<>
-			<Outlet />
-			<TanStackRouterDevtools />
-		</>
-	),
+	component: AppRoot,
 })
