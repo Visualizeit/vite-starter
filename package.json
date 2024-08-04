@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "format": "prettier --write .",
+    "docker:build": "docker build -t  vite-starter .",
+    "docker:run": "docker run -p 80:80 -p 443:443 -p 443:443/udp -v caddy_data:/data -v caddy_config:/config vite-starter",
     "lint": "eslint .",
     "preview": "vite preview",
     "prepare": "husky"
