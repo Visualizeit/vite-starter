@@ -4,7 +4,7 @@ import { createFileRoute } from '@tanstack/react-router'
 const HomePage = () => {
 	return (
 		<Container className="flex-1" size="xl">
-			<Title>Welcome Home!</Title>
+			<Title c="primary">Welcome Home!</Title>
 		</Container>
 	)
 }
