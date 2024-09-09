@@ -49,9 +49,53 @@ declare module '@tanstack/react-router' {
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren({
-	LayoutRouteRoute: LayoutRouteRoute.addChildren({ LayoutPageRoute }),
-})
+interface LayoutRouteRouteChildren {
+	LayoutPageRoute: typeof LayoutPageRoute
+}
+
+const LayoutRouteRouteChildren: LayoutRouteRouteChildren = {
+	LayoutPageRoute: LayoutPageRoute,
+}
+
+const LayoutRouteRouteWithChildren = LayoutRouteRoute._addFileChildren(
+	LayoutRouteRouteChildren,
+)
+
+export interface FileRoutesByFullPath {
+	'': typeof LayoutRouteRouteWithChildren
+	'/': typeof LayoutPageRoute
+}
+
+export interface FileRoutesByTo {
+	'/': typeof LayoutPageRoute
+}
+
+export interface FileRoutesById {
+	__root__: typeof rootRoute
+	'/_layout': typeof LayoutRouteRouteWithChildren
+	'/_layout/': typeof LayoutPageRoute
+}
+
+export interface FileRouteTypes {
+	fileRoutesByFullPath: FileRoutesByFullPath
+	fullPaths: '' | '/'
+	fileRoutesByTo: FileRoutesByTo
+	to: '/'
+	id: '__root__' | '/_layout' | '/_layout/'
+	fileRoutesById: FileRoutesById
+}
+
+export interface RootRouteChildren {
+	LayoutRouteRoute: typeof LayoutRouteRouteWithChildren
+}
+
+const rootRouteChildren: RootRouteChildren = {
+	LayoutRouteRoute: LayoutRouteRouteWithChildren,
+}
+
+export const routeTree = rootRoute
+	._addFileChildren(rootRouteChildren)
+	._addFileTypes<FileRouteTypes>()
 
 /* prettier-ignore-end */
 
