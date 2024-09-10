@@ -17,85 +17,85 @@ import { Route as LayoutPageImport } from './routes/_layout/page'
 // Create/Update Routes
 
 const LayoutRouteRoute = LayoutRouteImport.update({
-	id: '/_layout',
-	getParentRoute: () => rootRoute,
+  id: '/_layout',
+  getParentRoute: () => rootRoute,
 } as any)
 
 const LayoutPageRoute = LayoutPageImport.update({
-	path: '/',
-	getParentRoute: () => LayoutRouteRoute,
+  path: '/',
+  getParentRoute: () => LayoutRouteRoute,
 } as any)
 
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
-	interface FileRoutesByPath {
-		'/_layout': {
-			id: '/_layout'
-			path: ''
-			fullPath: ''
-			preLoaderRoute: typeof LayoutRouteImport
-			parentRoute: typeof rootRoute
-		}
-		'/_layout/': {
-			id: '/_layout/'
-			path: '/'
-			fullPath: '/'
-			preLoaderRoute: typeof LayoutPageImport
-			parentRoute: typeof LayoutRouteImport
-		}
-	}
+  interface FileRoutesByPath {
+    '/_layout': {
+      id: '/_layout'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof LayoutRouteImport
+      parentRoute: typeof rootRoute
+    }
+    '/_layout/': {
+      id: '/_layout/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof LayoutPageImport
+      parentRoute: typeof LayoutRouteImport
+    }
+  }
 }
 
 // Create and export the route tree
 
 interface LayoutRouteRouteChildren {
-	LayoutPageRoute: typeof LayoutPageRoute
+  LayoutPageRoute: typeof LayoutPageRoute
 }
 
 const LayoutRouteRouteChildren: LayoutRouteRouteChildren = {
-	LayoutPageRoute: LayoutPageRoute,
+  LayoutPageRoute: LayoutPageRoute,
 }
 
 const LayoutRouteRouteWithChildren = LayoutRouteRoute._addFileChildren(
-	LayoutRouteRouteChildren,
+  LayoutRouteRouteChildren,
 )
 
 export interface FileRoutesByFullPath {
-	'': typeof LayoutRouteRouteWithChildren
-	'/': typeof LayoutPageRoute
+  '': typeof LayoutRouteRouteWithChildren
+  '/': typeof LayoutPageRoute
 }
 
 export interface FileRoutesByTo {
-	'/': typeof LayoutPageRoute
+  '/': typeof LayoutPageRoute
 }
 
 export interface FileRoutesById {
-	__root__: typeof rootRoute
-	'/_layout': typeof LayoutRouteRouteWithChildren
-	'/_layout/': typeof LayoutPageRoute
+  __root__: typeof rootRoute
+  '/_layout': typeof LayoutRouteRouteWithChildren
+  '/_layout/': typeof LayoutPageRoute
 }
 
 export interface FileRouteTypes {
-	fileRoutesByFullPath: FileRoutesByFullPath
-	fullPaths: '' | '/'
-	fileRoutesByTo: FileRoutesByTo
-	to: '/'
-	id: '__root__' | '/_layout' | '/_layout/'
-	fileRoutesById: FileRoutesById
+  fileRoutesByFullPath: FileRoutesByFullPath
+  fullPaths: '' | '/'
+  fileRoutesByTo: FileRoutesByTo
+  to: '/'
+  id: '__root__' | '/_layout' | '/_layout/'
+  fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
-	LayoutRouteRoute: typeof LayoutRouteRouteWithChildren
+  LayoutRouteRoute: typeof LayoutRouteRouteWithChildren
 }
 
 const rootRouteChildren: RootRouteChildren = {
-	LayoutRouteRoute: LayoutRouteRouteWithChildren,
+  LayoutRouteRoute: LayoutRouteRouteWithChildren,
 }
 
 export const routeTree = rootRoute
-	._addFileChildren(rootRouteChildren)
-	._addFileTypes<FileRouteTypes>()
+  ._addFileChildren(rootRouteChildren)
+  ._addFileTypes<FileRouteTypes>()
 
 /* prettier-ignore-end */
 
