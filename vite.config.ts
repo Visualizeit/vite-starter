@@ -22,6 +22,6 @@ export default defineConfig({
     },
     staged: {
         '*.{js,jsx,ts,tsx,json,jsonc,yaml,yml,html,vue,hbs,handlebars,css,scss,less,graphql,gql,md,markdown}':
-            'vp check --fix',
+            'ultracite fix --unsafe',
     },
 })

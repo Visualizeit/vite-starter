@@ -57,7 +57,7 @@ const mantineTheme = createTheme({
     },
     spacing: {
         full: 'calc(infinity * 1px)',
-        xxs: 'calc(0.25rem * var(--mantine-scale))',
+        xxs: 'calc(0.5rem * var(--mantine-scale))',
     },
 })
 
