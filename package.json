@@ -8,6 +8,7 @@
         "dev": "vp dev",
         "build": "vp build",
         "start": "node .output/server/index.mjs",
+        "typecheck": "tsc --noEmit",
         "check": "ultracite check",
         "fix": "ultracite fix",
         "staged": "vp staged"
