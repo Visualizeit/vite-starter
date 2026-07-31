@@ -1,4 +1,11 @@
-import { Badge, Button, Container, createTheme, Switch } from '@mantine/core'
+import {
+    Badge,
+    Button,
+    Container,
+    createTheme,
+    rem,
+    Switch,
+} from '@mantine/core'
 import type {
     DefaultMantineColor,
     DefaultMantineSize,
@@ -7,9 +14,9 @@ import type {
 
 type ExtendedCustomColors = 'brand' | DefaultMantineColor
 
-type ExtendedCustomSpacing = 'xxs' | DefaultMantineSize
+type ExtendedCustomSpacing = 'xxs' | '2xl' | '3xl' | '4xl' | DefaultMantineSize
 
-type ExtendedCustomRadius = 'full' | DefaultMantineSize
+type ExtendedCustomRadius = '2xl' | '3xl' | '4xl' | 'full' | DefaultMantineSize
 
 declare module '@mantine/core' {
     export interface MantineThemeColorsOverride {
@@ -37,6 +44,18 @@ const mantineTheme = createTheme({
             '#006bca',
             '#005cb3',
         ],
+        dark: [
+            '#c1c2c5',
+            '#a6a7ab',
+            '#909296',
+            '#5c5f66',
+            '#373a40',
+            '#2c2e33',
+            '#25262b',
+            '#1a1b1e',
+            '#141517',
+            '#101113',
+        ],
     },
     components: {
         Badge: Badge.extend({
@@ -53,11 +72,26 @@ const mantineTheme = createTheme({
     },
     primaryColor: 'brand',
     radius: {
+        '2xl': rem(18),
+        '3xl': rem(22),
+        '4xl': rem(26),
         full: 'calc(infinity * 1px)',
+        lg: rem(10),
+        md: rem(8),
+        sm: rem(6),
+        xl: rem(14),
+        xs: rem(4),
     },
     spacing: {
-        full: 'calc(infinity * 1px)',
-        xxs: 'calc(0.5rem * var(--mantine-scale))',
+        '2xl': rem(48),
+        '3xl': rem(64),
+        '4xl': rem(96),
+        lg: rem(24),
+        md: rem(16),
+        sm: rem(12),
+        xl: rem(32),
+        xs: rem(8),
+        xxs: rem(4),
     },
 })
 
