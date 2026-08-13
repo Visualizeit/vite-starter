@@ -14,10 +14,14 @@ const Component = () => (
     <html lang="en" {...mantineHtmlProps}>
         <head>
             <HeadContent />
-            <ColorSchemeScript />
+            <ColorSchemeScript defaultColorScheme="auto" />
         </head>
         <body>
-            <MantineProvider deduplicateInlineStyles theme={mantineTheme}>
+            <MantineProvider
+                deduplicateInlineStyles
+                theme={mantineTheme}
+                defaultColorScheme="auto"
+            >
                 <MainLayout />
             </MantineProvider>
             <Scripts />
