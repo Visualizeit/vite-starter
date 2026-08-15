@@ -11,7 +11,7 @@ const MainLayout = () => (
             </Group>
         </AppShell.Header>
         <AppShell.Main className="flex">
-            <Box className="w-full relative">
+            <Box className="relative w-full">
                 <Outlet />
             </Box>
         </AppShell.Main>
