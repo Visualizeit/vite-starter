@@ -28,14 +28,13 @@
         "zod": "^4.4.3"
     },
     "devDependencies": {
-        "@rolldown/plugin-babel": "^0.2.3",
         "@tailwindcss/vite": "4.3.3",
         "@total-typescript/tsconfig": "^1.0.4",
         "@types/node": "^26.2.0",
         "@types/react": "^19.2.18",
         "@types/react-dom": "^19.2.4",
-        "@vitejs/plugin-react": "^6.0.5",
-        "babel-plugin-react-compiler": "^1.0.0",
+        "@vitejs/plugin-react": "^6.1.0",
+        "oxc-transform-react": "^0.145.0",
         "oxfmt": "^0.63.0",
         "oxlint": "^1.78.0",
         "postcss": "^8.5.26",
