@@ -1,17 +1,32 @@
-import tailwindcss from '@tailwindcss/vite'
-import { tanstackStart } from '@tanstack/react-start/plugin/vite'
-import viteReact from '@vitejs/plugin-react'
-import { nitro } from 'nitro/vite'
-import { defineConfig } from 'vite-plus'
+import { defineConfig, lazyPlugins } from 'vite-plus'
+
+import formatterConfig from './oxfmt.config'
+import lintConfig from './oxlint.config'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [
-        tailwindcss(),
-        tanstackStart(),
-        nitro(),
-        viteReact({ compiler: true }),
-    ],
+    fmt: formatterConfig,
+    lint: lintConfig,
+    plugins: lazyPlugins(async () => {
+        const [
+            { default: tailwindcss },
+            { tanstackStart },
+            { default: viteReact },
+            { nitro },
+        ] = await Promise.all([
+            import('@tailwindcss/vite'),
+            import('@tanstack/react-start/plugin/vite'),
+            import('@vitejs/plugin-react'),
+            import('nitro/vite'),
+        ])
+
+        return [
+            tailwindcss(),
+            tanstackStart(),
+            nitro(),
+            viteReact({ compiler: true }),
+        ]
+    }),
     resolve: {
         tsconfigPaths: true,
     },
@@ -19,7 +34,6 @@ export default defineConfig({
         open: true,
     },
     staged: {
-        '*.{js,jsx,ts,tsx,json,jsonc,yaml,yml,html,vue,hbs,handlebars,css,scss,less,graphql,gql,md,markdown}':
-            'ultracite fix --unsafe --no-error-on-unmatched-pattern',
+        '*': 'vp check --fix',
     },
 })
