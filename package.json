@@ -20,7 +20,7 @@
         "@mantine/hooks": "9.5.2",
         "@tanstack/react-router": "^1.170.32",
         "@tanstack/react-start": "^1.168.49",
-        "cnfast": "^0.1.0",
+        "cn": "^0.2.4",
         "es-toolkit": "^1.52.0",
         "nitro": "3.0.260610-beta",
         "react": "^19.2.8",

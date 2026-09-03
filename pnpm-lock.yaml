@@ -41,9 +41,9 @@ importers:
       '@tanstack/react-start':
         specifier: ^1.168.49
         version: 1.168.49(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.0)(esbuild@0.27.7)(jiti@2.7.0)(sugarss@5.0.1(postcss@8.5.26))(terser@5.43.1)(tsx@4.21.0)(typescript@7.0.2)(yaml@2.9.0))(crossws@0.4.10(srvx@0.11.22))(esbuild@0.27.7)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rolldown@1.2.4)
-      cnfast:
-        specifier: ^0.1.0
-        version: 0.1.0
+      cn:
+        specifier: ^0.2.4
+        version: 0.2.4
       es-toolkit:
         specifier: ^1.52.0
         version: 1.52.0
@@ -1735,8 +1735,9 @@ packages:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
 
-  cnfast@0.1.0:
-    resolution: {integrity: sha512-rH0jBKeLkVrK7NsZ5Ba2l7WdMBmm1k0FMpABeXUU1PgTUxbz3261gEuCSsrYuXo4BwAe3yCcIbQ93YyS52lOGQ==}
+  cn@0.2.4:
+    resolution: {integrity: sha512-SzQvoh5FwizWtQg9+JueKdjWhlfCZMdu5DqNHm9q1wUlRVmKb9WXlepR9bTTbPwzEOyX1ujJ6lcCppmn3bNUCg==}
+    engines: {node: '>=20'}
     hasBin: true
 
   commander@15.0.0:
@@ -4150,7 +4151,7 @@ snapshots:
 
   clsx@2.1.1: {}
 
-  cnfast@0.1.0: {}
+  cn@0.2.4: {}
 
   commander@15.0.0: {}
 
